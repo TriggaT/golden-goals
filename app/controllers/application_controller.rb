@@ -1,6 +1,7 @@
 
 
 class ApplicationController < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
   
   configure do
     set :public_folder, 'public'
@@ -12,6 +13,7 @@ class ApplicationController < Sinatra::Base
 
 
   get '/' do
+    binding.pry
   erb :welcome 
 
   end
