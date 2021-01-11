@@ -5,12 +5,13 @@ class UsersController < ApplicationController
     end 
 
     post '/signup' do 
-        user = User.new(name: params[:name], email: params[:email], password: params[:password])
+        @user = User.new(name: params[:name], email: params[:email], password: params[:password])
 
-        if user.save
-			redirect "users/account"
+        if @user.save
+            session[:user_id] = @user.id
+			redirect "/account"
 		else
-			redirect "failure"
+			redirect "/failure"
         end
     end 
 
@@ -19,15 +20,18 @@ class UsersController < ApplicationController
     end
 
     post "/login" do
-        user = User.find_by(:email => params[:email])
+        @user = User.find_by(:email => params[:email])
         
-        if user && user.authenticate(params[:password])
-          session[:user_id] = user.id
+        if @user && @user.authenticate(params[:password])
+          session[:user_id] = @user.id
           redirect '/account'
         else  redirect '/failure'
         end
-        
     end
+
+    get '/account' do 
+        erb :'users/account'      
+    end 
 
     get '/logout' do
         session.clear
@@ -37,9 +41,4 @@ class UsersController < ApplicationController
     get "/failure" do
         erb :'users/failure'
     end
-
-    
-
-    
-
 end 

@@ -1,0 +1,15 @@
+<% if logged_in? %>
+  <% @user = current_user %>
+  <h1>Hello <%=@user.name%>!</h1>
+  <h2> Your current goals </h2>
+  <% if @user.goals == [] %>
+  
+  <p> <em> <%= "You currently have no goals. Let's work on that! You can click the button above to create a new goal." %> </em></p>
+  <% else %> 
+<ul><% @user.goals.each do |goal| %>
+    <li> <a href="/goals/<%=goal.slug%>"><%=goal.title%></a>, <%=goal.motivation%></li>
+  <% end %>
+  <% end %>
+</ul>
+  <% else redirect '/failure' %>
+  <% end %>  

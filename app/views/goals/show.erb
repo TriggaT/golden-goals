@@ -1,0 +1,19 @@
+
+
+<h1> <%= @goal.title %> </h1>
+<% if flash.has?(:message) %>
+  <em> <%= flash[:message] %> </em> <br>
+<% end %>
+<br><p> <strong> Status: </strong> <%= @goal.status  %>  </p>
+<p> <strong> Motivation: </strong> <%= @goal.motivation  %>  </p>
+<p> <strong> Description: </strong> <%= @goal.description  %>  </p>
+<p> <strong> Completion Date: </strong> <%= @goal.estimated_completion_date  %> </p>
+
+<a href='/goals/<%=@goal.slug%>/edit'><button type="button" id="edit_goal">Edit Goal</button></a>
+<form action="/goals/<%= @goal.slug %>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete" />
+
+
+
+

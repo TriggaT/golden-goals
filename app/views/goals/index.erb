@@ -1,0 +1,5 @@
+<h2> Goals </h2>
+<ul><% @user.goals.each do |goal| %>
+    <li> <a href="/goals/<%= goal.slug %>"> <%= goal.title %> </a></li>
+  <% end %>
+  </ul>

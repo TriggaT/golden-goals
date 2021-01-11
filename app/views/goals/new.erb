@@ -1,0 +1,17 @@
+<h1 style="text-align:center">Add a New Goal</h1>
+
+<form action="/goals" method="POST">
+  <label for="title">Title:</label>
+ <p> <input id="title" type="text" name="title"></p>
+  <label for="status">Status:</label>
+  <p><input id="status" type="text" name="status"></p>
+  <label for="motivation">Motivation:</label>
+  <p> <input id="motivation" type="text" name="motivation"></p>
+  <p class="formfield">
+  <label for="description">Description:</label><br>
+  <textarea id="description" name="description" wrap="soft"></textarea></p>
+  <label for="estimated_completion_date">Completion Date(estimate):</label>
+ <p> <input id="estimated_completion_date" type="date" name="estimated_completion_date"></p>
+
+  <input type="submit" value="Create">
+</form>
