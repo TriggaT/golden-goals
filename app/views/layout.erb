@@ -13,7 +13,32 @@
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
-  <body>
+  <body style='background-color:gold'>
+  
+  <div class="container">
+    
+    <header style="text-align:center">
+          <ul id="mainMenu">
+            <li><a href="/">Home</a></li>
+            <% if logged_in? %>
+              <li><a href="/goals">Goals</a></li>
+              <li><a href="/logout">Logout</a></li>
+            <% else %>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Signup</a></li>
+            <% end %>
+          </ul>
+      </nav>
+      
+      <div id="logo"> 
+        <% if logged_in? %>
+          <a href="/goals/new"><button type="button" id="new_goal_button">New Goal</button></a>
+        <% else %>
+          <h1>Golden Goals</h1>
+        <% end %>
+      </div><!-- logo -->
+      
+    </header>
     <div class="wrapper">
 
         <%= yield %>

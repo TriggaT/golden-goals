@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 1f3184a1fc3600c26267a3764d836a3e0956f4ae
+  branch: master
+  specs:
+    faker (2.15.1)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -43,6 +51,8 @@ GEM
     public_suffix (4.0.6)
     racc (1.5.2)
     rack (2.2.3)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (2.1.0)
       rack
     rack-test (1.1.0)
@@ -102,7 +112,9 @@ DEPENDENCIES
   activerecord (= 5.2.3)
   bcrypt
   capybara
+  faker!
   pry
+  rack-flash3
   rack-test
   rake
   require_all
