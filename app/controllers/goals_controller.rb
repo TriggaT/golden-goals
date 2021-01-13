@@ -4,7 +4,7 @@ class GoalsController < ApplicationController
   use Rack::Flash
  
   get '/goals' do
-    erb :'users/account'
+    erb :'goals/index'
   end
 
   get '/goals/new' do
@@ -30,9 +30,8 @@ class GoalsController < ApplicationController
     if @goal.user_id == session["user_id"]
         erb :'goals/show'
     else redirect "/goals/failure"
+    end
     end 
-end 
-
 
   
   get '/goals/:slug/edit' do
@@ -41,7 +40,7 @@ end
         erb :'goals/edit'
     else redirect "/goals/failure"
     end 
-end 
+    end 
 
 
   patch '/goals/:slug' do
@@ -56,7 +55,7 @@ end
   delete '/goals/:slug' do 
     @goal = Goal.find_by_slug(params[:slug])
     @goal.delete
-
+    
     redirect '/goals'
   end 
 end 

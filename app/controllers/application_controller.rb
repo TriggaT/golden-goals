@@ -10,10 +10,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "SecureRandom.hex"
   end
 
-
-
   get '/' do
-    erb :welcome 
+    erb :"users/welcome" 
   end
 
   helpers do
@@ -24,6 +22,10 @@ class ApplicationController < Sinatra::Base
     def current_user
       User.find(session[:user_id])
     end
+  end
+
+  not_found do
+    redirect "/"
   end
 
 end

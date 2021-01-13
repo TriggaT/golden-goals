@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
         if @user.save
             session[:user_id] = @user.id
-			redirect "/account"
+			redirect "/goals"
 		else
 			redirect "/failure"
         end
@@ -24,13 +24,13 @@ class UsersController < ApplicationController
         
         if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
-          redirect '/account'
+          redirect '/goals'
         else  redirect '/failure'
         end
     end
 
     get '/account' do 
-        erb :'users/account'      
+        erb :'users/welcome'      
     end 
 
     get '/logout' do
