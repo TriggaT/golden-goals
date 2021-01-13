@@ -2,4 +2,4 @@ Golden Goals is web applications that allows users that sign up to manage and tr
 
 To install the app and properly use the app, you must download the repo and run bundle install to get all the neccesary gems needed for app. Once you have the repo downloaded, you can shotgun and go to http://localhost:9393/ to view the app and use it. 
 
-You can view the license to the code here: 
+You can view the license to the code here: https://github.com/TriggaT/golden-goals/blob/main/LICENSE
