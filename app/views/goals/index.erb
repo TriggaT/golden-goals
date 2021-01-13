@@ -7,7 +7,7 @@
   <p> <em> <%= "You currently have no goals. Let's work on that! You can click the new goal button above to create one." %> </em></p>
   <% else %> 
 <ul><% @user.goals.each do |goal| %>
-    <li> <a href="/goals/<%=goal.slug%>"><%=goal.title%></a> - <%=goal.motivation%></li>
+    <li> <a href="/goals/<%=goal.slug%>"><%=goal.title%></a> - <%=goal.status.strip%>, <%= goal.motivation%></li>
   <% end %>
   <% end %>
 </ul>

@@ -16,7 +16,7 @@ class GoalsController < ApplicationController
     current_user.goals << @goal
     @goal.save
     
-    flash[:message] = "You have successfully created a goal! Remembering your goals brings you one step closer to completed them."
+    flash[:message] = "You have successfully created a goal! Remembering your goals brings you one step closer to completing them."
     redirect("/goals/#{@goal.slug}")
   end
 

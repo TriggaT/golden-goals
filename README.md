@@ -1,1 +1,5 @@
+Golden Goals is web applications that allows users that sign up to manage and track goals that they would like to accomplish. Each goal has a title and status to know if you've completed the goals or you're half-way there. Users define the status of the goal. Users must also have a select a motivation for completing the goal to remind themselves why they're taking on the challenge. They must describe the goal to know what it is that they are actually striving to achieve. They should include and estimate on when they think they're going to complete it, which will help define the status and know when they need to put in extra effort towards completing it.
 
+To install the app and properly use the app, you must download the repo and run bundle install to get all the neccesary gems needed for app. Once you have the repo downloaded, you can shotgun and go to http://localhost:9393/ to view the app and use it. 
+
+You can view the license to the code here: 

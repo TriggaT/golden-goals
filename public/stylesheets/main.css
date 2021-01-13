@@ -58,17 +58,6 @@
     vertical-align: middle;
   }
 
-  div.welcome {
-    text-align: center;
-    border: 1px solid #000;
-    height: 100px;
-    padding: 10px 0;
-}
-
-div.welcome p {
-    display: inline-block;
-    text-align: left;
-}
 
 
   .wrapper {
@@ -79,12 +68,12 @@ div.welcome p {
     margin: 16px auto;
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
-    width: 95%;
+    width: 100%;
   }
 
   .content {
     float: none;
-    width: 90%;
+    width: 95%;
 }
   
   .container {
