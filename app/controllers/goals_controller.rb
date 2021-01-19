@@ -14,10 +14,13 @@ class GoalsController < ApplicationController
   post '/goals' do
     @goal = Goal.create(params)
     current_user.goals << @goal
-    @goal.save
-    
-    flash[:message] = "You have successfully created a goal! Remembering your goals brings you one step closer to completing them."
-    redirect("/goals/#{@goal.slug}")
+    if @goal.save
+      flash[:message] = "You have successfully created a goal! Remembering your goals brings you one step closer to completing them."
+      redirect("/goals/#{@goal.slug}")
+    else flash[:message] = "There was something with your goal information. Please make sure it at least has a title, description, motivation, and an estimated completion date."
+      redirect "/goals/new"
+    end
+
   end
 
   get "/goals/failure" do 

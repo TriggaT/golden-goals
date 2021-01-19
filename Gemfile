@@ -5,7 +5,7 @@ gem 'activerecord', "5.2.3"
 gem 'sinatra-activerecord'
 gem 'rake'
 gem 'require_all'
-gem 'sqlite3', '~> 1.4', '>= 1.4.2'
+gem 'sqlite3', '~> 1.3', '< 1.3.11'
 gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'

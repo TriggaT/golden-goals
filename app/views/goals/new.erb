@@ -1,6 +1,9 @@
 <h1 style="text-align:center">Add a New Goal</h1>
+<% if flash.has?(:message) %>
+  <p style="text-align:center"> <em> <%= flash[:message] %> </em> </p>
+<% end %>
 
-<form action="/goals" method="POST">
+<br><form action="/goals" method="POST">
   <label for="title">Title:</label>
  <p> <input id="title" type="text" name="title"></p>
   <label for="status">Status:</label>
