@@ -17,7 +17,7 @@ class GoalsController < ApplicationController
     if @goal.save
       flash[:message] = "You have successfully created a goal! Remembering your goals brings you one step closer to completing them."
       redirect("/goals/#{@goal.slug}")
-    else flash[:message] = "There was something with your goal information. Please make sure it at least has a title, motivation, description, and an estimated completion date."
+    else flash[:message] = "There was something with your goal information. Please make sure it has a title, status, motivation, description, and an estimated completion date."
       redirect "/goals/new"
     end
 
@@ -27,23 +27,29 @@ class GoalsController < ApplicationController
     erb :'goals/failure'
   end 
 
+  get '/goalss' do 
+    @goals = Goal.all
+   
+    erb :'goals/all'
+  end 
+
 
   get '/goals/:slug' do
     @goal = Goal.find_by_slug(params[:slug])
-    if @goal.user_id == session["user_id"]
+    if @goal && @goal.user_id == session["user_id"]
         erb :'goals/show'
     else redirect "/goals/failure"
     end
-    end 
+  end 
 
   
   get '/goals/:slug/edit' do
     @goal = Goal.find_by_slug(params[:slug])
-    if @goal.user_id == session["user_id"]
+    if @goal && @goal.user_id == session["user_id"]
         erb :'goals/edit'
     else redirect "/goals/failure"
     end 
-    end 
+  end 
 
 
   patch '/goals/:slug' do
@@ -61,6 +67,9 @@ class GoalsController < ApplicationController
     
     redirect '/goals'
   end 
+
+  
+
 end 
 
 

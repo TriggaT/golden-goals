@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-    validates_presence_of :title, :description, :motivation, :estimated_completion_date
+    validates_presence_of :title, :description, :status, :motivation, :estimated_completion_date
     belongs_to :user
 
     def slug

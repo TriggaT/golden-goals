@@ -1,0 +1,10 @@
+<% arr = []%>
+<% @goals.each do |goal| %>
+<% arr << goal.title %>
+<% end %>
+<% arr.sort { |a, b| b <=> a }.each do |title| %>
+<ul>
+<li> <%= title %> </li>
+</ul>
+<% end %>
+
